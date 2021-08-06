@@ -1,0 +1,8 @@
+import os
+
+class Config:
+    ASTRA_DB_ID = os.environ.get('ASTRA_DB_ID')
+    ASTRA_DB_REGION = os.environ.get('ASTRA_DB_REGION')
+    ASTRA_DB_KEYSPACE= os.environ.get('ASTRA_DB_KEYSPACE')
+    ASTRA_DB_TOKEN = os.environ.get('ASTRA_DB_APPLICATION_TOKEN')
+
