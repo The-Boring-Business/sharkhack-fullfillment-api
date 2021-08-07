@@ -6,8 +6,6 @@ from src.routes.routes import initialize_routes
 from config import Config
 from flask_cors import CORS
 from requests_oauthlib import OAuth1Session
-import twitter
-from src.utils.twit import add_to_tw_auth
 
 
 # Place where app is defined
