@@ -21,6 +21,7 @@ CONSUMER_SECRET = Config.TWITTER_SECRET
 CALLBACk = Config.TWITTER_CALLBACK
 
 
+
 @app.route("/request_token")
 def request_oauth_token():
     request_token = OAuth1Session(
