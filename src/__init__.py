@@ -73,6 +73,22 @@ def request_access_token():
         ]
     }
 
+# # Google Oauth
+# @app.route("/google_login")
+# def google_login():
+#     google = OAuth2Session(Config.GOOGLE_CLIENT_ID, scope=Config.GOOGLE_CLIENT_ID)
+#     authorization_url, state = google.authorization_url(Config.GOOGLE_AUTHORIZATION_URL)
+#     session['oauth_state'] = state
+#     return redirect(authorization_url)
+
+# # Instagram Oauth
+# @app.route("/instagram_login")
+# def instagram_login():
+#     instagram = OAuth2Session(Config.INSTAGRAM_CLIENT_ID, scope=Config.INSTAGRAM_CLIENT_ID)
+#     authorization_url, state = instagram.authorization_url(Config.INSTAGRAM_AUTHORIZATION_URL)
+#     session['oauth_state'] = state
+#     return redirect(authorization_url)
+
 api = Api(app)
 CORS(app, resources=r'/*',allow_headers=[
     "Content-Type", "Authorization", "Access-Control-Allow-Methods"])
