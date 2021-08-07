@@ -19,6 +19,12 @@ class Data(Credits):
         query = {'X-Cassandra-Token':self.Token, 'Content-Type':'application/json', "Accept": "application/json"}
         r = requests.post(url, data=json.dumps(data), headers=query)
         return r.json()
+    
+    def update_row(self, primarykey, data):
+        url = self.base+"/"+primarykey
+        query = {'X-Cassandra-Token':self.Token, 'Content-Type':'application/json', "Accept": "application/json"}
+        r = requests.patch(url, data=json.dumps(data), headers=query)
+        return r.json()
 
     def get_row_by_primarykey(self,primarykey):
         url = self.base+"/"+primarykey

@@ -3,8 +3,8 @@ from Astra.pyastra.types.credits import Credits
 import json
 
 class Tables(Credits):
-    def __init__(self, keyspace):
-        self.base = "https://"+self.ID+"-"+ self.Region +".apps.astra.datastax.com/api/rest/v2/schemas/keyspaces/"+keyspace
+    def __init__(self):
+        self.base = "https://"+self.ID+"-"+ self.Region +".apps.astra.datastax.com/api/rest/v2/schemas/keyspaces/"+self.keyspace
 
     def get_all_tables(self):
         url = self.base+"/tables"
