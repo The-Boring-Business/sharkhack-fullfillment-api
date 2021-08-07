@@ -7,6 +7,7 @@ from config import Config
 from flask_cors import CORS
 from requests_oauthlib import OAuth1Session
 import twitter
+from src.utils.twit import add_to_tw_auth
 
 
 # Place where app is defined
@@ -55,23 +56,14 @@ def request_access_token():
     access_token = str.split(response.text, '&')
     access_token_key = str.split(access_token[0], '=')[1]
     access_token_secret = str.split(access_token[1], '=')[1]
-    api = twitter.Api(
-        consumer_key=CONSUMER_KEY,
-        consumer_secret=CONSUMER_SECRET,
-        access_token_key=access_token_key,
-        access_token_secret=access_token_secret,
-    )
-    friends = api.GetFriends()
+    access_token_name = str.split(access_token[2], '=')[1]
+    access_token_id = str.split(access_token[3], '=')[1]
     return {
-        "followings": [
-            {
-                "name": u.name,
-                "img": u.profile_image_url_https,
-                "description": u.description,
+            "access_token_key ": access_token_key,
+            "access_token_secret ": access_token_secret ,
+            "access_token_name ": access_token_name,
+            "access_token_id ": access_token_id 
             }
-            for u in friends
-        ]
-    }
 
 # # Google Oauth
 # @app.route("/google_login")
