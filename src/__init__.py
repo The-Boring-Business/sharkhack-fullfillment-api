@@ -57,10 +57,10 @@ def request_access_token():
     access_token_name = str.split(access_token[2], '=')[1]
     access_token_id = str.split(access_token[3], '=')[1]
     return {
-            "access_token_key ": access_token_key,
-            "access_token_secret ": access_token_secret ,
-            "access_token_name ": access_token_name,
-            "access_token_id ": access_token_id 
+            "access_token_key": access_token_key,
+            "access_token_secret": access_token_secret ,
+            "access_token_name": access_token_name,
+            "access_token_id": access_token_id 
             }
 
 # # Google Oauth
