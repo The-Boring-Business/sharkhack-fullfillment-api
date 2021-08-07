@@ -18,12 +18,13 @@ TWITTER_REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
 TWITTER_ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
 CONSUMER_KEY = Config.TWITTER_CONSUMER_KEY
 CONSUMER_SECRET = Config.TWITTER_SECRET
+CALLBACk = Config.TWITTER_CALLBACK
 
 
 @app.route("/request_token")
 def request_oauth_token():
     request_token = OAuth1Session(
-        client_key=CONSUMER_KEY, client_secret=CONSUMER_SECRET, callback_uri="http://127.0.0.1:5000/api/twitter/callback"
+        client_key=CONSUMER_KEY, client_secret=CONSUMER_SECRET, callback_uri=CALLBACk
     )
     data = request_token.get(TWITTER_REQUEST_TOKEN_URL)
     if data.status_code == 200:
