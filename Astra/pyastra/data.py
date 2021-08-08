@@ -27,7 +27,10 @@ class Data(Credits):
         return r.json()
 
     def get_row_by_primarykey(self,primarykey):
-        url = self.base+"/"+primarykey
+        if type(primarykey) is list:
+            url = self.base+"/"+"/".join(primarykey)
+        else : 
+            url = self.base+"/"+primarykey
         query = {'X-Cassandra-Token':self.Token, 'Content-Type':'application/json', "Accept": "application/json"}
         r = requests.get(url, headers=query)
         return r.json()
@@ -40,7 +43,10 @@ class Data(Credits):
         return r.json()
 
     def delete_row_by_primary_key(self,primarykey):
-        url = self.base+"/"+primarykey
+        if type(primarykey) is list:
+            url = self.base+"/"+"/".join(primarykey)
+        else : 
+            url = self.base+"/"+primarykey
         query = {'X-Cassandra-Token':self.Token, 'Content-Type':'application/json', "Accept": "application/json"}
         r = requests.delete(url, headers=query)
         return r.json()
