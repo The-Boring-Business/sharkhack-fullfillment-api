@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'boringbusiness'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_02e8b3ed929648a7b98d37552a097f7e }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_fc577748752c45b5a7052f9fe5fa1a34 }}
